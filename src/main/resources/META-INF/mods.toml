@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+
+[[mods]]
+modId="terrestrial_biomes"
+version="1.18.2-a0.1"
+displayName="Terrestrial Biomes"
+credits="Credits are on mod's page."
+authors="Goldorion & Max094_Reikeb"
+description='''
+Terrestrial Biomes is a mod made by Goldorion and Max094_Reikeb.
+'''
+
+[[dependencies.electrona]] #optional
+    modId="forge"
+    mandatory=true
+    versionRange="[40.0.46,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.electrona]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
