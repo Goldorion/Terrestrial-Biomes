@@ -43,6 +43,8 @@ public class SoundFiles implements DataProvider {
 
         this.addSound(SoundsInit.DEER_AMBIENT.get(), "terrestrial_biomes/entity.deer.ambient");
         this.addSound(SoundsInit.GRASS_DINOSAUR_AMBIENT.get(), "terrestrial_biomes/entity.grass_dinosaur.ambient");
+        this.addSound(SoundsInit.WHALE_AMBIENT.get(), "terrestrial_biomes/entity.whale.ambient");
+        this.addSound(SoundsInit.YETI_AMBIENT.get(), "terrestrial_biomes/entity.yeti.ambient");
 
         //Save the json object to a file after we have added everything
         DataProvider.save(GSON, cache, this.root, outputPath);

@@ -1,6 +1,6 @@
 {
   "entity.deer.ambient": {
-    "category": "entity",
+    "category": "neutral",
     "subtitle": "subtitles.entity.deer.ambient",
     "sounds": [
       {
@@ -10,11 +10,29 @@
     ]
   },
   "entity.grass_dinosaur.ambient": {
-    "category": "entity",
+    "category": "neutral",
     "subtitle": "subtitles.entity.grass_dinosaur.ambient",
     "sounds": [
       {
         "name": "terrestrial_biomes:entity.grass_dinosaur.ambient",
+        "stream": false
+      }
+    ]
+  },
+  "entity.whale.ambient": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "terrestrial_biomes:entity.whale.ambient",
+        "stream": false
+      }
+    ]
+  },
+  "entity.yeti.ambient": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "terrestrial_biomes:entity.yeti.ambient",
         "stream": false
       }
     ]
