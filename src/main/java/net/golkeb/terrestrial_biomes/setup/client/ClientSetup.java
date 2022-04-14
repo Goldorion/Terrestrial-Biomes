@@ -1,7 +1,7 @@
 package net.golkeb.terrestrial_biomes.setup.client;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.guis.BackpackWindow;
+import net.golkeb.terrestrial_biomes.client.guis.BackpackWindow;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
 
 import net.minecraft.client.gui.screens.MenuScreens;

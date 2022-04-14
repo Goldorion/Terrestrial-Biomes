@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.guis;
+package net.golkeb.terrestrial_biomes.client.guis;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
