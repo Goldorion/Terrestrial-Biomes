@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.world.gen.objects;
+package net.golkeb.terrestrial_biomes.datagen.objects;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

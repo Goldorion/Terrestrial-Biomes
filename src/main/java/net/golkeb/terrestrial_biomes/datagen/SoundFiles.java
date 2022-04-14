@@ -1,13 +1,13 @@
-package net.golkeb.terrestrial_biomes.world.gen;
+package net.golkeb.terrestrial_biomes.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
+import net.golkeb.terrestrial_biomes.datagen.objects.SoundEventBuilder;
 import net.golkeb.terrestrial_biomes.init.SoundsInit;
-import net.golkeb.terrestrial_biomes.world.gen.objects.SoundBuilder;
-import net.golkeb.terrestrial_biomes.world.gen.objects.SoundEventBuilder;
+import net.golkeb.terrestrial_biomes.datagen.objects.SoundBuilder;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
