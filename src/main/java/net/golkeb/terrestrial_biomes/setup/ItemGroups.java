@@ -22,4 +22,19 @@ public class ItemGroups {
             return false;
         }
     };
+
+    /*
+    public static final CreativeModTab TERRESTRIAL_BIOMES_BLOCKS = new CreativeModTab("terrestrial_biomes_blocks") {
+        @OnlyIn(Dist.CLIENT)
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(BlockInit.TIN_ORE.get());
+        }
+
+        @OnlyIn(Dist.CLIENT)
+        public boolean hasSearchBar() {
+            return false;
+        }
+    };
+    */
 }
