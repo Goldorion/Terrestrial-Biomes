@@ -23,18 +23,3 @@ public class ItemGroups {
         }
     };
 }
-
-/*
-public static final CreativeModeTab ELECTRONA_BLOCKS = new CreativeModeTab("electrona_blocks") {
-        @OnlyIn(Dist.CLIENT)
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(BlockInit.TIN_ORE.get());
-        }
-
-        @OnlyIn(Dist.CLIENT)
-        public boolean hasSearchBar() {
-            return false;
-        }
-    };
- */
