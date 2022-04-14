@@ -1,5 +1,7 @@
 {
+  "entity.terrestrial_biomes.beetle": "Beetle",
   "item.terrestrial_biomes.aquamarine": "Aquamarine",
   "item.terrestrial_biomes.backpack": "Backpack",
+  "item.terrestrial_biomes.beetle_spawn_egg": "Beetle Spawn Egg",
   "itemGroup.terrestrial_biomes_items": "Terrestrial Biomes : Items"
 }
