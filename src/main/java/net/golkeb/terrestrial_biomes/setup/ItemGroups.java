@@ -1,10 +1,8 @@
 package net.golkeb.terrestrial_biomes.setup;
 
 import net.golkeb.terrestrial_biomes.init.ItemInit;
-
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -14,7 +12,7 @@ public class ItemGroups {
         @OnlyIn(Dist.CLIENT)
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ItemInit.AQUAMARINE.get());
+            return new ItemStack(ItemInit.BLUEBERRY.get());
         }
 
         @OnlyIn(Dist.CLIENT)
