@@ -17,6 +17,6 @@ public class ExplorerDwarfRenderer<T extends ExplorerDwarf> extends MobRenderer<
     }
 
     public ResourceLocation getTextureLocation(T texture) {
-        return Keys.EXPLORER_DWARF;
+        return (Math.random() < 0.5 ? Keys.EXPLORER_DWARF : Keys.EXPLORER_DWARF_BLONDE);
     }
 }
