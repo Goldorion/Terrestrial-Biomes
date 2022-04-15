@@ -1,12 +1,14 @@
 package net.golkeb.terrestrial_biomes.init;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
+import net.golkeb.terrestrial_biomes.items.AbstractEgg;
 import net.golkeb.terrestrial_biomes.items.Backpack;
 import net.golkeb.terrestrial_biomes.setup.ItemGroups;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,4 +22,7 @@ public class ItemInit {
             new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Foods.SWEET_BERRIES)));
 
     public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", Backpack::new);
+
+    public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = ITEMS.register("explorer_dwarf_spawn_egg", () ->
+            new AbstractEgg(EntityInit.EXPLORER_DWARF.get(), -9880025, -14342875));
 }

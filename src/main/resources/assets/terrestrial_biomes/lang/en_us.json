@@ -1,5 +1,7 @@
 {
+  "entity.terrestrial_biomes.explorer_dwarf": "Explorer Dwarf",
   "item.terrestrial_biomes.aquamarine": "Aquamarine",
   "item.terrestrial_biomes.backpack": "Backpack",
+  "item.terrestrial_biomes.explorer_dwarf_spawn_egg": "Explorer Dwarf Spawn Egg",
   "itemGroup.terrestrial_biomes_items": "Terrestrial Biomes : Items"
 }
