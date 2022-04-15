@@ -87,10 +87,6 @@ public class ExplorerDwarf extends PathfinderMob {
         } else if ((Math.random() < 0.125)) {
             ItemStack stack = new ItemStack(Items.EMERALD, 8);
             ItemHandlerHelper.giveItemToPlayer(player, stack);
-        } else if ((Math.random() < 0.125)) {
-            // ItemStack stack = new ItemStack(ItemInit.SPINEL.get(), 8);
-            ItemStack stack = new ItemStack(Items.STICK, 8);
-            ItemHandlerHelper.giveItemToPlayer(player, stack);
         } else {
             this.mobInteract(player, hand);
         }
