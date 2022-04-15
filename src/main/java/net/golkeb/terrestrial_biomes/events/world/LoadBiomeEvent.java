@@ -23,7 +23,7 @@ public class LoadBiomeEvent {
                 || Keys.MUSHROOM_FOREST.equals(event.getName()) || Keys.BIG_MUSHROOM_FOREST.equals(event.getName())
                 || Keys.HIMALAYAN_MOUNTAINS.equals(event.getName()) || Keys.RHYOLITE_MOUNTAINS.equals(event.getName())) {
             event.getSpawns().getSpawner(MobCategory.AMBIENT).add(new MobSpawnSettings
-                    .SpawnerData(EntityInit.EXPLORER_DWARF_TYPE, 20, 1, 1));
+                    .SpawnerData(EntityInit.EXPLORER_DWARF.get(), 20, 1, 1));
         }
     }
 }

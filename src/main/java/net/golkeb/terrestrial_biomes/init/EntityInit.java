@@ -13,9 +13,7 @@ public class EntityInit {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES,
             TerrestrialBiomes.MODID);
 
-    public static final EntityType<ExplorerDwarf> EXPLORER_DWARF_TYPE = EntityType.Builder
-            .of(ExplorerDwarf::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
-            .setTrackingRange(64).setUpdateInterval(3).sized(1f, 1.75f).build("explorer_dwarf");
-
-    public static final RegistryObject<EntityType<ExplorerDwarf>> EXPLORER_DWARF = ENTITIES.register("explorer_dwarf", () -> EXPLORER_DWARF_TYPE);
+    public static final RegistryObject<EntityType<ExplorerDwarf>> EXPLORER_DWARF = ENTITIES.register("explorer_dwarf", () ->
+            EntityType.Builder.of(ExplorerDwarf::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+                    .setUpdateInterval(3).sized(1f, 1.75f).build("explorer_dwarf"));
 }

@@ -27,7 +27,7 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerModels(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityInit.EXPLORER_DWARF_TYPE, renderManager ->
+        event.registerEntityRenderer(EntityInit.EXPLORER_DWARF.get(), renderManager ->
                 new ExplorerDwarfRenderer<>(renderManager, new DwarfModel<>(renderManager.bakeLayer(ExplorerDwarfRenderer.LAYER_LOCATION))));
     }
 }
