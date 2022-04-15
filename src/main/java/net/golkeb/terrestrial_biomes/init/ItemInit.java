@@ -23,6 +23,6 @@ public class ItemInit {
 
     public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", Backpack::new);
 
-    public static final RegistryObject<SpawnEggItem> BEETLE_SPAWN_EGG = ITEMS.register("beetle_spawn_egg", () ->
-            new AbstractEgg(EntityInit.BEETLE_ENTITY_TYPE, -14474461, -12500671));
+    public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = ITEMS.register("explorer_dwarf_spawn_egg", () ->
+            new AbstractEgg(EntityInit.EXPLORER_DWARF_TYPE, -9880025, -14342875));
 }
