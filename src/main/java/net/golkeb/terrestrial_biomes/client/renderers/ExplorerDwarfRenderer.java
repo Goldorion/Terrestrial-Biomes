@@ -8,15 +8,17 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class ExplorerDwarfRenderer<T extends ExplorerDwarf> extends MobRenderer<T, DwarfModel<T>> {
+import java.util.Locale;
+
+public class ExplorerDwarfRenderer extends MobRenderer<ExplorerDwarf, DwarfModel<ExplorerDwarf>> {
 
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(Keys.DWARF_MODEL, "main");
 
-    public ExplorerDwarfRenderer(EntityRendererProvider.Context context, DwarfModel<T> model) {
-        super(context, model, 1.75F);
+    public ExplorerDwarfRenderer(EntityRendererProvider.Context context) {
+        super(context, new DwarfModel<>(context.bakeLayer(LAYER_LOCATION)), 1.75F);
     }
 
-    public ResourceLocation getTextureLocation(T texture) {
-        return (Math.random() < 0.5 ? Keys.EXPLORER_DWARF : Keys.EXPLORER_DWARF_BLONDE);
+    public ResourceLocation getTextureLocation(ExplorerDwarf explorerDwarf) {
+        return new ResourceLocation(explorerDwarf.getEntityData().get(ExplorerDwarf.EXPLORER_DWARF).toLowerCase(Locale.ROOT));
     }
 }

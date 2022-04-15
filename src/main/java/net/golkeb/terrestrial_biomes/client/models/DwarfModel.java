@@ -8,9 +8,11 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.Entity;
 
-// Made with Blockbench 4.2.2
-// Exported for Minecraft version 1.17 with Mojang mappings
-// Paste this class into your mod and generate all required imports
+/**
+ * Made with Blockbench 4.2.2
+ * Exported for Minecraft version 1.18.2 with Mojang mappings
+ * Paste this class into your mod and generate all required imports
+ */
 
 public class DwarfModel<T extends Entity> extends EntityModel<T> {
 
