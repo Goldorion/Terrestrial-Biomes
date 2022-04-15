@@ -4,7 +4,7 @@ import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
 import net.golkeb.terrestrial_biomes.items.AbstractEgg;
 import net.golkeb.terrestrial_biomes.items.Backpack;
 import net.golkeb.terrestrial_biomes.setup.ItemGroups;
-import net.minecraft.world.food.Foods;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Rarity;
@@ -19,10 +19,10 @@ public class ItemInit {
             TerrestrialBiomes.MODID);
 
     public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () -> new ItemNameBlockItem(BlockInit.BLUEBERRIES.get(),
-            new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Foods.SWEET_BERRIES)));
+            new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1f).build())));
 
     public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", Backpack::new);
 
     public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = ITEMS.register("explorer_dwarf_spawn_egg", () ->
-            new AbstractEgg(EntityInit.EXPLORER_DWARF.get(), -9880025, -14342875));
+            new AbstractEgg(EntityInit.EXPLORER_DWARF, -9880025, -14342875));
 }

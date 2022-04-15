@@ -1,11 +1,13 @@
 package net.golkeb.terrestrial_biomes.entities;
 
+import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,7 +22,7 @@ import net.minecraft.world.level.Level;
 
 public class ExplorerDwarf extends PathfinderMob {
 
-    public static final EntityDataAccessor<String> EXPLORER_DWARF = SynchedEntityData.defineId(ExplorerDwarf.class, EntityDataSerializers.STRING);
+    public static final EntityDataAccessor<String> EXPLORER_DWARF_TEXTURE = SynchedEntityData.defineId(ExplorerDwarf.class, EntityDataSerializers.STRING);
 
     public ExplorerDwarf(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
@@ -66,9 +68,13 @@ public class ExplorerDwarf extends PathfinderMob {
         return 5;
     }
 
+    public ResourceLocation getTexture() {
+        return TerrestrialBiomes.RL(this.entityData.get(EXPLORER_DWARF_TEXTURE));
+    }
+
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(EXPLORER_DWARF, this.random.nextDouble() < 0.5 ? Keys.EXPLORER_DWARF.getNamespace() : Keys.EXPLORER_DWARF_BLONDE.getNamespace());
+        this.entityData.define(EXPLORER_DWARF_TEXTURE, this.random.nextDouble() < 0.5 ? Keys.EXPLORER_DWARF.getPath() : Keys.EXPLORER_DWARF_BLONDE.getPath());
     }
 }

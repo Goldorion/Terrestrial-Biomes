@@ -14,6 +14,6 @@ public class EntityInit {
             TerrestrialBiomes.MODID);
 
     public static final RegistryObject<EntityType<ExplorerDwarf>> EXPLORER_DWARF = ENTITIES.register("explorer_dwarf", () ->
-            EntityType.Builder.of(ExplorerDwarf::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-                    .setUpdateInterval(3).sized(1f, 1.75f).build("explorer_dwarf"));
+            EntityType.Builder.of(ExplorerDwarf::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).sized(1f, 1.75f).build("explorer_dwarf"));
 }

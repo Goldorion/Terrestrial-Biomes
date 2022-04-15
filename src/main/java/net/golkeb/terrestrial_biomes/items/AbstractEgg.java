@@ -20,13 +20,16 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
+import net.minecraftforge.common.ForgeSpawnEggItem;
+
 import java.util.Objects;
+import java.util.function.Supplier;
 
-public class AbstractEgg extends SpawnEggItem {
+public class AbstractEgg extends ForgeSpawnEggItem {
 
-    private final EntityType<? extends Mob> entityType;
+    private final Supplier<? extends EntityType<? extends Mob>> entityType;
 
-    public AbstractEgg(EntityType<? extends Mob> entityType, int color1, int color2) {
+    public AbstractEgg(Supplier<? extends EntityType<? extends Mob>> entityType, int color1, int color2) {
         super(entityType, color1, color2, new Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC));
         this.entityType = entityType;
         DispenserBlock.registerBehavior(this,
@@ -51,7 +54,7 @@ public class AbstractEgg extends SpawnEggItem {
         BlockState blockState = level.getBlockState(blockPos);
         if (level.getBlockEntity(blockPos) instanceof SpawnerBlockEntity spawnerBlockEntity) {
             BaseSpawner baseSpawner = spawnerBlockEntity.getSpawner();
-            baseSpawner.setEntityId(this.entityType);
+            baseSpawner.setEntityId(this.entityType.get());
             spawnerBlockEntity.setChanged();
             level.sendBlockUpdated(blockPos, blockState, blockState, Block.UPDATE_CLIENTS + Block.UPDATE_NEIGHBORS);
             itemStack.shrink(1);
@@ -64,7 +67,7 @@ public class AbstractEgg extends SpawnEggItem {
             blockpos1 = blockPos.relative(direction);
         }
 
-        if (this.entityType.spawn((ServerLevel) level, itemStack, context.getPlayer(), blockpos1, MobSpawnType.SPAWN_EGG, true, !Objects.equals(blockPos, blockpos1) && direction == Direction.UP) != null) {
+        if (this.entityType.get().spawn((ServerLevel) level, itemStack, context.getPlayer(), blockpos1, MobSpawnType.SPAWN_EGG, true, !Objects.equals(blockPos, blockpos1) && direction == Direction.UP) != null) {
             itemStack.shrink(1);
         }
         return InteractionResult.SUCCESS;
