@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class ExplorerDwarfRenderer extends MobRenderer<ExplorerDwarf, DwarfModel<ExplorerDwarf>> {
 
     public ExplorerDwarfRenderer(EntityRendererProvider.Context context) {
-        super(context, new DwarfModel<>(context.bakeLayer(ModelLayer.EXPLORER_DWARF)), 1.75F);
+        super(context, new DwarfModel<>(context.bakeLayer(ModelLayer.EXPLORER_DWARF)), 0.5F);
     }
 
     public ResourceLocation getTextureLocation(ExplorerDwarf explorerDwarf) {

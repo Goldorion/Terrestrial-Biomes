@@ -25,4 +25,10 @@ public class ItemInit {
 
     public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = ITEMS.register("explorer_dwarf_spawn_egg", () ->
             new AbstractEgg(EntityInit.EXPLORER_DWARF, -9880025, -14342875));
+
+    public static final RegistryObject<SpawnEggItem> FARMER_DWARF_SPAWN_EGG = ITEMS.register("farmer_dwarf_spawn_egg", () ->
+            new AbstractEgg(EntityInit.FARMER_DWARF, -9880025, -2245076));
+
+    public static final RegistryObject<SpawnEggItem> WARRIOR_DWARF_SPAWN_EGG = ITEMS.register("warrior_dwarf_spawn_egg", () ->
+            new AbstractEgg(EntityInit.WARRIOR_DWARF, -9880025, -3026479));
 }

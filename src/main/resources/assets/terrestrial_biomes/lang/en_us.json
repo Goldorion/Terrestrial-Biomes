@@ -1,8 +1,12 @@
 {
   "entity.terrestrial_biomes.explorer_dwarf": "Explorer Dwarf",
+  "entity.terrestrial_biomes.farmer_dwarf": "Farmer Dwarf",
+  "entity.terrestrial_biomes.warrior_dwarf": "Warrior Dwarf",
   "item.terrestrial_biomes.aquamarine": "Aquamarine",
   "item.terrestrial_biomes.backpack": "Backpack",
   "item.terrestrial_biomes.blueberries": "Blueberries",
   "item.terrestrial_biomes.explorer_dwarf_spawn_egg": "Explorer Dwarf Spawn Egg",
+  "item.terrestrial_biomes.farmer_dwarf_spawn_egg": "Farmer Dwarf Spawn Egg",
+  "item.terrestrial_biomes.warrior_dwarf_spawn_egg": "Warrior Dwarf Spawn Egg",
   "itemGroup.terrestrial_biomes_items": "Terrestrial Biomes : Items"
 }
