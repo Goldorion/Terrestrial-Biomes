@@ -1,6 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "terrestrial_biomes:items/crab_bucket"
-  }
+    "layer0": "terrestrial_biomes:items/red_crab_bucket"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "variant": 1.0
+      },
+      "model": "terrestrial_biomes:item/brown_crab_bucket"
+    }
+  ]
 }

@@ -24,4 +24,7 @@ public class Keys {
 
     // GUIs
     public static final ResourceLocation BACKPACK_GUI = TerrestrialBiomes.RL("textures/guis/backpack_gui.png");
+
+    // ItemProperties
+    public static final ResourceLocation VARIANT_PROPERTY = new ResourceLocation("variant");
 }
