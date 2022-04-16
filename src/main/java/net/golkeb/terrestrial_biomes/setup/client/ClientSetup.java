@@ -2,7 +2,9 @@ package net.golkeb.terrestrial_biomes.setup.client;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
 import net.golkeb.terrestrial_biomes.client.guis.BackpackWindow;
+import net.golkeb.terrestrial_biomes.client.models.CrabModel;
 import net.golkeb.terrestrial_biomes.client.models.DwarfModel;
+import net.golkeb.terrestrial_biomes.client.renderers.CrabRenderer;
 import net.golkeb.terrestrial_biomes.client.renderers.ExplorerDwarfRenderer;
 import net.golkeb.terrestrial_biomes.client.renderers.FarmerDwarfRenderer;
 import net.golkeb.terrestrial_biomes.client.renderers.WarriorDwarfRenderer;
@@ -36,6 +38,7 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerModels(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(EntityInit.CRAB.get(), CrabRenderer::new);
         event.registerEntityRenderer(EntityInit.EXPLORER_DWARF.get(), ExplorerDwarfRenderer::new);
         event.registerEntityRenderer(EntityInit.FARMER_DWARF.get(), FarmerDwarfRenderer::new);
         event.registerEntityRenderer(EntityInit.WARRIOR_DWARF.get(), WarriorDwarfRenderer::new);
@@ -43,6 +46,7 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModelLayer.CRAB, CrabModel::createBodyLayer);
         event.registerLayerDefinition(ModelLayer.EXPLORER_DWARF, DwarfModel::createBodyLayer);
         event.registerLayerDefinition(ModelLayer.FARMER_DWARF, DwarfModel::createBodyLayer);
         event.registerLayerDefinition(ModelLayer.WARRIOR_DWARF, DwarfModel::createBodyLayer);
