@@ -15,7 +15,7 @@ Terrestrial Biomes is a mod made by Goldorion and Max094_Reikeb.
 [[dependencies.terrestrial_biomes]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[40.0.49,)"
+    versionRange="[40.0.52,)"
     ordering="NONE"
     side="BOTH"
 
