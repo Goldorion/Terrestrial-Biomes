@@ -8,6 +8,7 @@ import net.golkeb.terrestrial_biomes.client.renderers.CrabRenderer;
 import net.golkeb.terrestrial_biomes.client.renderers.ExplorerDwarfRenderer;
 import net.golkeb.terrestrial_biomes.client.renderers.FarmerDwarfRenderer;
 import net.golkeb.terrestrial_biomes.client.renderers.WarriorDwarfRenderer;
+import net.golkeb.terrestrial_biomes.entities.Crab;
 import net.golkeb.terrestrial_biomes.init.BlockInit;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
@@ -40,7 +41,7 @@ public class ClientSetup {
             // Item Properties
             ItemProperties.register(ItemInit.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {
                 if (entity == null) return 0.0F;
-                if (stack.getTag() != null) return stack.getTag().getInt("BucketVariantTag");
+                if (stack.getTag() != null) return stack.getTag().getInt(Crab.BUCKET_VARIANT_TAG);
                 return 0.0F;
             });
         });
