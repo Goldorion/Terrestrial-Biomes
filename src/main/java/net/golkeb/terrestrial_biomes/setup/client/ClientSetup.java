@@ -40,7 +40,7 @@ public class ClientSetup {
             // Item Properties
             ItemProperties.register(ItemInit.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {
                 if (entity == null) return 0.0F;
-                if (stack.getTag() != null && stack.getTag().contains("BucketVariantTag", 1)) return 1.0F;
+                if (stack.getTag() != null) return stack.getTag().getInt("BucketVariantTag");
                 return 0.0F;
             });
         });

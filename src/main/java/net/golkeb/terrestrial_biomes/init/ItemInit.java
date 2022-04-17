@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,7 +33,7 @@ public class ItemInit {
             new MobBucketItem(EntityInit.CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<SpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg", () ->
-            new AbstractEgg(EntityInit.CRAB, -511739, -12412));
+            new ForgeSpawnEggItem(EntityInit.CRAB, -511739, -12412, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = ITEMS.register("explorer_dwarf_spawn_egg", () ->
             new AbstractEgg(EntityInit.EXPLORER_DWARF, -9880025, -14342875));

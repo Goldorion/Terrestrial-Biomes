@@ -15,11 +15,11 @@ public class Keys {
     public static final ResourceLocation WARM_OCEAN = new ResourceLocation("warm_ocean");
 
     // Entities
-    public static final ResourceLocation BROWN_CRAB = new ResourceLocation("textures/entities/crab/brown_crab.png");
+    public static final ResourceLocation BROWN_CRAB = TerrestrialBiomes.RL("textures/entities/crab/brown_crab.png");
     public static final ResourceLocation EXPLORER_DWARF = new ResourceLocation("textures/entities/dwarf/explorer_dwarf.png");
     public static final ResourceLocation EXPLORER_DWARF_BLONDE = new ResourceLocation("textures/entities/dwarf/explorer_dwarf_blonde.png");
     public static final ResourceLocation FARMER_DWARF = new ResourceLocation("textures/entities/dwarf/farmer_dwarf.png");
-    public static final ResourceLocation RED_CRAB = new ResourceLocation("textures/entities/crab/red_crab.png");
+    public static final ResourceLocation RED_CRAB = TerrestrialBiomes.RL("textures/entities/crab/red_crab.png");
     public static final ResourceLocation WARRIOR_DWARF = new ResourceLocation("textures/entities/dwarf/warrior_dwarf.png");
 
     // GUIs

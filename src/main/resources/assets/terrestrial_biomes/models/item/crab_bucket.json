@@ -6,7 +6,7 @@
   "overrides": [
     {
       "predicate": {
-        "variant": 1.0
+        "variant": 1
       },
       "model": "terrestrial_biomes:item/brown_crab_bucket"
     }

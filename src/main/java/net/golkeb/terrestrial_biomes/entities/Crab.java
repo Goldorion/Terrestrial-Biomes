@@ -1,6 +1,5 @@
 package net.golkeb.terrestrial_biomes.entities;
 
-import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
 import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.minecraft.nbt.CompoundTag;
@@ -29,7 +28,7 @@ import net.minecraftforge.common.ForgeMod;
 
 public class Crab extends AbstractFish {
 
-    public static final EntityDataAccessor<String> CRAB_TEXTURE = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.STRING);
+    public static final ResourceLocation[] CRAB_TEXTURE_LOCATIONS = new ResourceLocation[]{Keys.RED_CRAB, Keys.BROWN_CRAB};
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.INT);
 
     public Crab(EntityType<? extends AbstractFish> entityType, Level level) {
@@ -90,8 +89,12 @@ public class Crab extends AbstractFish {
         return 1;
     }
 
+    public static int getBaseVariant(int variant) {
+        return Math.min(variant & 255, 1);
+    }
+
     public ResourceLocation getTexture() {
-        return TerrestrialBiomes.RL(this.entityData.get(CRAB_TEXTURE));
+        return CRAB_TEXTURE_LOCATIONS[getBaseVariant(getVariant())];
     }
 
     public int getVariant() {
@@ -104,9 +107,7 @@ public class Crab extends AbstractFish {
 
     protected void defineSynchedData() {
         super.defineSynchedData();
-        double randomDouble = this.random.nextDouble();
-        this.entityData.define(CRAB_TEXTURE, randomDouble < 0.5 ? Keys.RED_CRAB.getPath() : Keys.BROWN_CRAB.getPath());
-        this.entityData.define(DATA_ID_TYPE_VARIANT, randomDouble < 0.5 ? 0 : 1);
+        this.entityData.define(DATA_ID_TYPE_VARIANT, this.random.nextDouble() < 0.5 ? 0 : 1);
     }
 
     public void saveToBucketTag(ItemStack itemStack) {
