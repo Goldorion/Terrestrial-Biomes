@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.entities.ai;
+package net.golkeb.terrestrial_biomes.entities.ai.goal;
 
 import net.golkeb.terrestrial_biomes.entities.Crab;
 import net.minecraft.core.BlockPos;
@@ -29,7 +29,6 @@ public class CrabToBeachGoal extends MoveToBlockGoal {
 
     public void start() {
         this.crab.setSearchingForLand(false);
-        this.crab.setGroundNavigation();
         super.start();
     }
 

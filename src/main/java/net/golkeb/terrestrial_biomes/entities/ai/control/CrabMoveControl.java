@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.entities.ai;
+package net.golkeb.terrestrial_biomes.entities.ai.control;
 
 import net.golkeb.terrestrial_biomes.entities.Crab;
 import net.minecraft.util.Mth;
@@ -17,7 +17,7 @@ public class CrabMoveControl extends MoveControl {
 
     public void tick() {
         LivingEntity livingEntity = this.crab.getTarget();
-        if (this.crab.wantsToSwim() && this.crab.isInWater()) {
+        if (this.crab.isInWater()) {
             if (livingEntity != null && livingEntity.getY() > this.crab.getY() || this.crab.isSearchingForLand()) {
                 this.crab.setDeltaMovement(this.crab.getDeltaMovement().add(0.0D, 0.002D, 0.0D));
             }

@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.entities.ai;
+package net.golkeb.terrestrial_biomes.entities.ai.goal;
 
 import net.golkeb.terrestrial_biomes.entities.Crab;
 import net.minecraft.world.entity.ai.goal.Goal;

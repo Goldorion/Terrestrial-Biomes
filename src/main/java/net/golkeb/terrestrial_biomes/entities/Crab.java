@@ -1,6 +1,10 @@
 package net.golkeb.terrestrial_biomes.entities;
 
-import net.golkeb.terrestrial_biomes.entities.ai.*;
+import net.golkeb.terrestrial_biomes.entities.ai.control.CrabMoveControl;
+import net.golkeb.terrestrial_biomes.entities.ai.goal.CrabSwimUpGoal;
+import net.golkeb.terrestrial_biomes.entities.ai.goal.CrabToBeachGoal;
+import net.golkeb.terrestrial_biomes.entities.ai.goal.CrabToWaterGoal;
+import net.golkeb.terrestrial_biomes.entities.ai.navigation.WaterClimberNavigation;
 import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.minecraft.core.BlockPos;
@@ -19,9 +23,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
-import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
-import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -34,20 +36,20 @@ import javax.annotation.Nullable;
 public class Crab extends AbstractShellfish {
 
     public static final String BUCKET_VARIANT_TAG = "BucketVariantTag";
+    boolean searchingForLand;
     public static final ResourceLocation[] CRAB_TEXTURE_LOCATIONS = new ResourceLocation[]{Keys.RED_CRAB, Keys.BROWN_CRAB};
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.BYTE);
 
-    boolean searchingForLand;
-    protected final WaterClimberNavigation waterNavigation;
-    protected final GroundPathNavigation groundNavigation;
-
     public Crab(EntityType<? extends AbstractShellfish> entityType, Level level) {
         super(entityType, level);
         setNoAi(false);
-        this.waterNavigation = new WaterClimberNavigation(this, level);
-        this.groundNavigation = new WallClimberNavigation(this, level);
         this.moveControl = new CrabMoveControl(this);
+    }
+
+    @Override
+    protected PathNavigation createNavigation(Level level) {
+        return new WaterClimberNavigation(this, level);
     }
 
     public ItemStack getBucketItemStack() {
@@ -103,24 +105,9 @@ public class Crab extends AbstractShellfish {
         this.spawnAtLocation(new ItemStack(ItemInit.RAW_CRAB_MEAT.get(), 1));
     }
 
+    @Override
     protected void handleAirSupply(int air) {
         this.setAirSupply(300);
-    }
-
-    public void updateSwimming() {
-        if (!this.level.isClientSide) {
-            if (this.isEffectiveAi() && this.isInWater() && this.wantsToSwim()) {
-                this.setWaterNavigation();
-                this.setSwimming(true);
-            } else {
-                this.setGroundNavigation();
-                this.setSwimming(false);
-            }
-        }
-    }
-
-    public boolean wantsToSwim() {
-        return this.searchingForLand || (this.getTarget() != null && this.getTarget().isInWater());
     }
 
     public void setSearchingForLand(boolean searchingForLand) {
@@ -129,14 +116,6 @@ public class Crab extends AbstractShellfish {
 
     public boolean isSearchingForLand() {
         return this.searchingForLand;
-    }
-
-    public void setGroundNavigation() {
-        this.navigation = this.groundNavigation;
-    }
-
-    public void setWaterNavigation() {
-        this.navigation = this.waterNavigation;
     }
 
     public boolean closeToNextPos() {
