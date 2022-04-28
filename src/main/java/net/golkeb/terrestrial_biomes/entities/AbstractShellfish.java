@@ -115,8 +115,4 @@ public abstract class AbstractShellfish extends WaterAnimal implements Bucketabl
     protected SoundEvent getWalkSound() {
         return SoundEvents.TURTLE_SHAMBLE;
     }
-
-    protected SoundEvent getSwimSound() {
-        return SoundEvents.TURTLE_SWIM;
-    }
 }

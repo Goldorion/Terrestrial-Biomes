@@ -4,7 +4,6 @@ import net.golkeb.terrestrial_biomes.entities.ai.control.CrabMoveControl;
 import net.golkeb.terrestrial_biomes.entities.ai.goal.CrabSwimUpGoal;
 import net.golkeb.terrestrial_biomes.entities.ai.goal.CrabToBeachGoal;
 import net.golkeb.terrestrial_biomes.entities.ai.goal.CrabToWaterGoal;
-import net.golkeb.terrestrial_biomes.entities.ai.navigation.WaterClimberNavigation;
 import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.minecraft.core.BlockPos;
@@ -24,6 +23,7 @@ import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -49,7 +49,7 @@ public class Crab extends AbstractShellfish {
 
     @Override
     protected PathNavigation createNavigation(Level level) {
-        return new WaterClimberNavigation(this, level);
+        return new WallClimberNavigation(this, level);
     }
 
     public ItemStack getBucketItemStack() {
@@ -72,11 +72,11 @@ public class Crab extends AbstractShellfish {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.5)
+        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.3)
                 .add(Attributes.MAX_HEALTH, 5)
                 .add(Attributes.ARMOR, 8)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(ForgeMod.SWIM_SPEED.get(), 0.5);
+                .add(ForgeMod.SWIM_SPEED.get(), 0.3);
     }
 
     public void tick() {
