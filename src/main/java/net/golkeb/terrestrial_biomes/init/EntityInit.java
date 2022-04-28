@@ -1,6 +1,7 @@
 package net.golkeb.terrestrial_biomes.init;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
+import net.golkeb.terrestrial_biomes.entities.Crab;
 import net.golkeb.terrestrial_biomes.entities.ExplorerDwarf;
 import net.golkeb.terrestrial_biomes.entities.FarmerDwarf;
 import net.golkeb.terrestrial_biomes.entities.WarriorDwarf;
@@ -14,6 +15,10 @@ public class EntityInit {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES,
             TerrestrialBiomes.MODID);
+
+    public static final RegistryObject<EntityType<Crab>> CRAB = ENTITIES.register("crab", () ->
+            EntityType.Builder.of(Crab::new, MobCategory.WATER_CREATURE).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).sized(0.6875f, 0.1875f).build("crab"));
 
     public static final RegistryObject<EntityType<ExplorerDwarf>> EXPLORER_DWARF = ENTITIES.register("explorer_dwarf", () ->
             EntityType.Builder.of(ExplorerDwarf::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)

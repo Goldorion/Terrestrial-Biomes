@@ -1,0 +1,12 @@
+{
+  "group": "terrestrial_biomes",
+  "type": "minecraft:smoking",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "terrestrial_biomes:raw_crab_meat"
+  },
+  "result": {
+    "item": "terrestrial_biomes:cooked_crab_meat"
+  }
+}
