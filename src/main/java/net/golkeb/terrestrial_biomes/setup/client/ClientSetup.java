@@ -4,10 +4,9 @@ import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
 import net.golkeb.terrestrial_biomes.client.guis.BackpackWindow;
 import net.golkeb.terrestrial_biomes.client.models.CrabModel;
 import net.golkeb.terrestrial_biomes.client.models.DwarfModel;
-import net.golkeb.terrestrial_biomes.client.renderers.CrabRenderer;
-import net.golkeb.terrestrial_biomes.client.renderers.ExplorerDwarfRenderer;
-import net.golkeb.terrestrial_biomes.client.renderers.FarmerDwarfRenderer;
-import net.golkeb.terrestrial_biomes.client.renderers.WarriorDwarfRenderer;
+import net.golkeb.terrestrial_biomes.client.models.StarfishModel;
+import net.golkeb.terrestrial_biomes.client.models.WhaleModel;
+import net.golkeb.terrestrial_biomes.client.renderers.*;
 import net.golkeb.terrestrial_biomes.entities.Crab;
 import net.golkeb.terrestrial_biomes.init.BlockInit;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
@@ -52,7 +51,9 @@ public class ClientSetup {
         event.registerEntityRenderer(EntityInit.CRAB.get(), CrabRenderer::new);
         event.registerEntityRenderer(EntityInit.EXPLORER_DWARF.get(), ExplorerDwarfRenderer::new);
         event.registerEntityRenderer(EntityInit.FARMER_DWARF.get(), FarmerDwarfRenderer::new);
+        event.registerEntityRenderer(EntityInit.STARFISH.get(), StarfishRenderer::new);
         event.registerEntityRenderer(EntityInit.WARRIOR_DWARF.get(), WarriorDwarfRenderer::new);
+        event.registerEntityRenderer(EntityInit.WHALE.get(), WhaleRenderer::new);
     }
 
     @SubscribeEvent
@@ -60,6 +61,8 @@ public class ClientSetup {
         event.registerLayerDefinition(ModelLayer.CRAB, CrabModel::createBodyLayer);
         event.registerLayerDefinition(ModelLayer.EXPLORER_DWARF, DwarfModel::createBodyLayer);
         event.registerLayerDefinition(ModelLayer.FARMER_DWARF, DwarfModel::createBodyLayer);
+        event.registerLayerDefinition(ModelLayer.STARFISH, StarfishModel::createBodyLayer);
         event.registerLayerDefinition(ModelLayer.WARRIOR_DWARF, DwarfModel::createBodyLayer);
+        event.registerLayerDefinition(ModelLayer.WHALE, WhaleModel::createBodyLayer);
     }
 }

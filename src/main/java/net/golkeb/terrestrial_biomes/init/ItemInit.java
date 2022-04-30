@@ -29,8 +29,14 @@ public class ItemInit {
     public static final RegistryObject<Item> COOKED_CRAB_MEAT = ITEMS.register("cooked_crab_meat", () ->
             new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(new FoodProperties.Builder().nutrition(5).saturationMod(6f).build())));
 
+    public static final RegistryObject<Item> STARFISH = ITEMS.register("starfish", () ->
+            new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS)));
+
     public static final RegistryObject<Item> CRAB_BUCKET = ITEMS.register("crab_bucket", () ->
             new MobBucketItem(EntityInit.CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> STARFISH_BUCKET = ITEMS.register("starfish_bucket", () ->
+            new MobBucketItem(EntityInit.STARFISH, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<SpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg", () ->
             new ForgeSpawnEggItem(EntityInit.CRAB, -511739, -12412, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
@@ -41,6 +47,12 @@ public class ItemInit {
     public static final RegistryObject<SpawnEggItem> FARMER_DWARF_SPAWN_EGG = ITEMS.register("farmer_dwarf_spawn_egg", () ->
             new AbstractEgg(EntityInit.FARMER_DWARF, -9880025, -2245076));
 
+    public static final RegistryObject<SpawnEggItem> STARFISH_SPAWN_EGG = ITEMS.register("starfish_spawn_egg", () ->
+            new AbstractEgg(EntityInit.STARFISH, -511739, -12412));
+
     public static final RegistryObject<SpawnEggItem> WARRIOR_DWARF_SPAWN_EGG = ITEMS.register("warrior_dwarf_spawn_egg", () ->
             new AbstractEgg(EntityInit.WARRIOR_DWARF, -9880025, -3026479));
+
+    public static final RegistryObject<SpawnEggItem> WHALE_SPAWN_EGG = ITEMS.register("whale_spawn_egg", () ->
+            new AbstractEgg(EntityInit.WHALE, -9271601, -13158280));
 }

@@ -1,5 +1,6 @@
 package net.golkeb.terrestrial_biomes;
 
+import net.golkeb.terrestrial_biomes.entities.Whale;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.setup.RegistryHandler;
 import net.minecraft.resources.ResourceLocation;
@@ -44,7 +45,9 @@ public class TerrestrialBiomes {
             SpawnPlacements.register(EntityInit.CRAB.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Squid::checkMobSpawnRules);
             SpawnPlacements.register(EntityInit.EXPLORER_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
             SpawnPlacements.register(EntityInit.FARMER_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+            SpawnPlacements.register(EntityInit.STARFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Squid::checkMobSpawnRules);
             SpawnPlacements.register(EntityInit.WARRIOR_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+            SpawnPlacements.register(EntityInit.WHALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Whale::checkMobSpawn);
         });
     }
 }
