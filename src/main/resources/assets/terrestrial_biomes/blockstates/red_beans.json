@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "terrestrial_biomes:block/beans_stage0"
+    },
+    "age=1": {
+      "model": "terrestrial_biomes:block/beans_stage0"
+    },
+    "age=2": {
+      "model": "terrestrial_biomes:block/beans_stage1"
+    },
+    "age=3": {
+      "model": "terrestrial_biomes:block/beans_stage1"
+    },
+    "age=4": {
+      "model": "terrestrial_biomes:block/beans_stage2"
+    },
+    "age=5": {
+      "model": "terrestrial_biomes:block/beans_stage2"
+    },
+    "age=6": {
+      "model": "terrestrial_biomes:block/beans_stage2"
+    },
+    "age=7": {
+      "model": "terrestrial_biomes:block/red_beans_stage3"
+    }
+  }
+}

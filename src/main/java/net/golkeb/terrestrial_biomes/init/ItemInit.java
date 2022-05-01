@@ -3,9 +3,9 @@ package net.golkeb.terrestrial_biomes.init;
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
 import net.golkeb.terrestrial_biomes.items.AbstractEgg;
 import net.golkeb.terrestrial_biomes.items.Backpack;
+import net.golkeb.terrestrial_biomes.misc.Food;
 import net.golkeb.terrestrial_biomes.setup.ItemGroups;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -18,16 +18,25 @@ public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             TerrestrialBiomes.MODID);
 
-    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () -> new ItemNameBlockItem(BlockInit.BLUEBERRIES.get(),
-            new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1f).build())));
+    public static final RegistryObject<Item> BEAN = ITEMS.register("bean", () ->
+            new ItemNameBlockItem(BlockInit.BEANS.get(), (new Item.Properties()).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.BEAN)));
+
+    public static final RegistryObject<Item> BLACK_BEAN = ITEMS.register("black_bean", () ->
+            new ItemNameBlockItem(BlockInit.BLACK_BEANS.get(), (new Item.Properties()).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.BEAN)));
+
+    public static final RegistryObject<Item> RED_BEAN = ITEMS.register("red_bean", () ->
+            new ItemNameBlockItem(BlockInit.RED_BEANS.get(), (new Item.Properties()).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.BEAN)));
+
+    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () ->
+            new ItemNameBlockItem(BlockInit.BLUEBERRIES.get(), (new Item.Properties()).stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.BLUEBERRY)));
 
     public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", Backpack::new);
 
     public static final RegistryObject<Item> RAW_CRAB_MEAT = ITEMS.register("raw_crab_meat", () ->
-            new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.4f).build())));
+            new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.RAW_CRAB)));
 
     public static final RegistryObject<Item> COOKED_CRAB_MEAT = ITEMS.register("cooked_crab_meat", () ->
-            new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(new FoodProperties.Builder().nutrition(5).saturationMod(6f).build())));
+            new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.COOKED_CRAB)));
 
     public static final RegistryObject<Item> STARFISH = ITEMS.register("starfish", () ->
             new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS)));

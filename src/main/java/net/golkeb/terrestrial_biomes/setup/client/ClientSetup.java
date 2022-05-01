@@ -36,6 +36,9 @@ public class ClientSetup {
 
             // Cutout
             ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRIES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(BlockInit.BEANS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACK_BEANS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(BlockInit.RED_BEANS.get(), RenderType.cutout());
 
             // Item Properties
             ItemProperties.register(ItemInit.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {
