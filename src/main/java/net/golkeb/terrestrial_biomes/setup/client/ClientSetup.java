@@ -9,8 +9,8 @@ import net.golkeb.terrestrial_biomes.client.model.WhaleModel;
 import net.golkeb.terrestrial_biomes.client.model.geom.ModelLayer;
 import net.golkeb.terrestrial_biomes.client.renderer.entity.*;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
-import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
+import net.golkeb.terrestrial_biomes.world.entity.Entity;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Crab;
 import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
@@ -51,12 +51,12 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerModels(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityInit.CRAB.get(), CrabRenderer::new);
-        event.registerEntityRenderer(EntityInit.EXPLORER_DWARF.get(), ExplorerDwarfRenderer::new);
-        event.registerEntityRenderer(EntityInit.FARMER_DWARF.get(), FarmerDwarfRenderer::new);
-        event.registerEntityRenderer(EntityInit.STARFISH.get(), StarfishRenderer::new);
-        event.registerEntityRenderer(EntityInit.WARRIOR_DWARF.get(), WarriorDwarfRenderer::new);
-        event.registerEntityRenderer(EntityInit.WHALE.get(), WhaleRenderer::new);
+        event.registerEntityRenderer(Entity.CRAB.get(), CrabRenderer::new);
+        event.registerEntityRenderer(Entity.EXPLORER_DWARF.get(), ExplorerDwarfRenderer::new);
+        event.registerEntityRenderer(Entity.FARMER_DWARF.get(), FarmerDwarfRenderer::new);
+        event.registerEntityRenderer(Entity.STARFISH.get(), StarfishRenderer::new);
+        event.registerEntityRenderer(Entity.WARRIOR_DWARF.get(), WarriorDwarfRenderer::new);
+        event.registerEntityRenderer(Entity.WHALE.get(), WhaleRenderer::new);
     }
 
     @SubscribeEvent

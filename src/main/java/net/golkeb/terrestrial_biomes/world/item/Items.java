@@ -1,8 +1,8 @@
 package net.golkeb.terrestrial_biomes.world.item;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.setup.ItemGroups;
+import net.golkeb.terrestrial_biomes.world.entity.Entity;
 import net.golkeb.terrestrial_biomes.world.food.Food;
 import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
 import net.minecraft.sounds.SoundEvents;
@@ -30,14 +30,14 @@ public class Items {
     public static final RegistryObject<Item> RAW_CRAB_MEAT = registerItem("raw_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.RAW_CRAB);
     public static final RegistryObject<Item> COOKED_CRAB_MEAT = registerItem("cooked_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.COOKED_CRAB);
     public static final RegistryObject<Item> STARFISH = registerItem("starfish", ItemGroups.TERRESTRIAL_BIOMES_ITEMS);
-    public static final RegistryObject<Item> CRAB_BUCKET = registerItem("crab_bucket", new MobBucketItem(EntityInit.CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<Item> STARFISH_BUCKET = registerItem("starfish_bucket", new MobBucketItem(EntityInit.STARFISH, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
-    public static final RegistryObject<SpawnEggItem> CRAB_SPAWN_EGG = registerSpawnEgg("crab_spawn_egg", EntityInit.CRAB, -511739, -12412);
-    public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = registerSpawnEgg("explorer_dwarf_spawn_egg", EntityInit.EXPLORER_DWARF, -9880025, -14342875);
-    public static final RegistryObject<SpawnEggItem> FARMER_DWARF_SPAWN_EGG = registerSpawnEgg("farmer_dwarf_spawn_egg", EntityInit.FARMER_DWARF, -9880025, -2245076);
-    public static final RegistryObject<SpawnEggItem> STARFISH_SPAWN_EGG = registerSpawnEgg("starfish_spawn_egg", EntityInit.STARFISH, -511739, -12412);
-    public static final RegistryObject<SpawnEggItem> WARRIOR_DWARF_SPAWN_EGG = registerSpawnEgg("warrior_dwarf_spawn_egg", EntityInit.WARRIOR_DWARF, -9880025, -3026479);
-    public static final RegistryObject<SpawnEggItem> WHALE_SPAWN_EGG = registerSpawnEgg("whale_spawn_egg", EntityInit.WHALE, -9271601, -13158280);
+    public static final RegistryObject<Item> CRAB_BUCKET = registerItem("crab_bucket", new MobBucketItem(Entity.CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> STARFISH_BUCKET = registerItem("starfish_bucket", new MobBucketItem(Entity.STARFISH, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<SpawnEggItem> CRAB_SPAWN_EGG = registerSpawnEgg("crab_spawn_egg", Entity.CRAB, -511739, -12412);
+    public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = registerSpawnEgg("explorer_dwarf_spawn_egg", Entity.EXPLORER_DWARF, -9880025, -14342875);
+    public static final RegistryObject<SpawnEggItem> FARMER_DWARF_SPAWN_EGG = registerSpawnEgg("farmer_dwarf_spawn_egg", Entity.FARMER_DWARF, -9880025, -2245076);
+    public static final RegistryObject<SpawnEggItem> STARFISH_SPAWN_EGG = registerSpawnEgg("starfish_spawn_egg", Entity.STARFISH, -511739, -12412);
+    public static final RegistryObject<SpawnEggItem> WARRIOR_DWARF_SPAWN_EGG = registerSpawnEgg("warrior_dwarf_spawn_egg", Entity.WARRIOR_DWARF, -9880025, -3026479);
+    public static final RegistryObject<SpawnEggItem> WHALE_SPAWN_EGG = registerSpawnEgg("whale_spawn_egg", Entity.WHALE, -9271601, -13158280);
 
     private static RegistryObject<Item> registerBlock(Block block, CreativeModeTab creativeModeTab, FoodProperties food) {
         return registerBlock(new BlockItem(block, (new Item.Properties()).tab(creativeModeTab).food(food)));

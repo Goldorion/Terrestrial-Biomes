@@ -1,8 +1,8 @@
 package net.golkeb.terrestrial_biomes;
 
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
-import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.sounds.Sounds;
+import net.golkeb.terrestrial_biomes.world.entity.Entity;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Whale;
 import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
@@ -32,7 +32,7 @@ public class TerrestrialBiomes {
         // Init Registries
         Blocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ContainerInit.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        EntityInit.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Entity.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         Items.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         Sounds.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
@@ -49,12 +49,12 @@ public class TerrestrialBiomes {
 
     public void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            SpawnPlacements.register(EntityInit.CRAB.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Squid::checkMobSpawnRules);
-            SpawnPlacements.register(EntityInit.EXPLORER_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
-            SpawnPlacements.register(EntityInit.FARMER_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
-            SpawnPlacements.register(EntityInit.STARFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Squid::checkMobSpawnRules);
-            SpawnPlacements.register(EntityInit.WARRIOR_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
-            SpawnPlacements.register(EntityInit.WHALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Whale::checkMobSpawn);
+            SpawnPlacements.register(Entity.CRAB.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Squid::checkMobSpawnRules);
+            SpawnPlacements.register(Entity.EXPLORER_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+            SpawnPlacements.register(Entity.FARMER_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+            SpawnPlacements.register(Entity.STARFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Squid::checkMobSpawnRules);
+            SpawnPlacements.register(Entity.WARRIOR_DWARF.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+            SpawnPlacements.register(Entity.WHALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Whale::checkMobSpawn);
         });
     }
 }
