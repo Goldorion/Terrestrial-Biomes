@@ -1,8 +1,8 @@
 package net.golkeb.terrestrial_biomes.world.entity.animal;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.init.SoundsInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
+import net.golkeb.terrestrial_biomes.sounds.Sounds;
 import net.golkeb.terrestrial_biomes.world.entity.ai.control.AbstractMoveControl;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
@@ -83,7 +83,7 @@ public class Whale extends WaterAnimal {
     }
 
     public SoundEvent getAmbientSound() {
-        return SoundsInit.WHALE_AMBIENT.get();
+        return Sounds.WHALE_AMBIENT.get();
     }
 
     public SoundEvent getHurtSound(DamageSource damageSource) {

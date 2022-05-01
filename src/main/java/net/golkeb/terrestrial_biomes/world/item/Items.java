@@ -21,6 +21,7 @@ import java.util.function.Supplier;
 public class Items {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TerrestrialBiomes.MODID);
+
     public static final RegistryObject<Item> BEAN = registerBlock(Blocks.BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
     public static final RegistryObject<Item> BLACK_BEAN = registerBlock(Blocks.BLACK_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
     public static final RegistryObject<Item> RED_BEAN = registerBlock(Blocks.RED_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);

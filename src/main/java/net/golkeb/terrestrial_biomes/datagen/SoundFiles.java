@@ -3,12 +3,10 @@ package net.golkeb.terrestrial_biomes.datagen;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.datagen.objects.SoundEventBuilder;
-import net.golkeb.terrestrial_biomes.init.SoundsInit;
 import net.golkeb.terrestrial_biomes.datagen.objects.SoundBuilder;
-
+import net.golkeb.terrestrial_biomes.datagen.objects.SoundEventBuilder;
+import net.golkeb.terrestrial_biomes.sounds.Sounds;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -41,10 +39,10 @@ public class SoundFiles implements DataProvider {
         final Path path = this.generator.getOutputFolder();
         final Path outputPath = getPath(path, TerrestrialBiomes.MODID);
 
-        this.addSound(SoundsInit.DEER_AMBIENT.get(), "terrestrial_biomes/entity.deer.ambient");
-        this.addSound(SoundsInit.GRASS_DINOSAUR_AMBIENT.get(), "terrestrial_biomes/entity.grass_dinosaur.ambient");
-        this.addSound(SoundsInit.WHALE_AMBIENT.get(), "terrestrial_biomes/entity.whale.ambient");
-        this.addSound(SoundsInit.YETI_AMBIENT.get(), "terrestrial_biomes/entity.yeti.ambient");
+        this.addSound(Sounds.DEER_AMBIENT.get(), "terrestrial_biomes/entity.deer.ambient");
+        this.addSound(Sounds.GRASS_DINOSAUR_AMBIENT.get(), "terrestrial_biomes/entity.grass_dinosaur.ambient");
+        this.addSound(Sounds.WHALE_AMBIENT.get(), "terrestrial_biomes/entity.whale.ambient");
+        this.addSound(Sounds.YETI_AMBIENT.get(), "terrestrial_biomes/entity.yeti.ambient");
 
         //Save the json object to a file after we have added everything
         DataProvider.save(GSON, cache, this.root, outputPath);

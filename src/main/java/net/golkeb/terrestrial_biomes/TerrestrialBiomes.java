@@ -2,7 +2,7 @@ package net.golkeb.terrestrial_biomes;
 
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
-import net.golkeb.terrestrial_biomes.init.SoundsInit;
+import net.golkeb.terrestrial_biomes.sounds.Sounds;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Whale;
 import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
@@ -34,7 +34,7 @@ public class TerrestrialBiomes {
         ContainerInit.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
         EntityInit.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         Items.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        SoundsInit.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Sounds.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         // Registers an event with the mod specific event bus. This is needed to register new stuff.
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
