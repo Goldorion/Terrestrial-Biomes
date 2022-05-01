@@ -22,10 +22,10 @@ public class Items {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TerrestrialBiomes.MODID);
 
-    public static final RegistryObject<Item> BEAN = ITEMS.register("bean", () -> registerBlockItem(Blocks.BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
-    public static final RegistryObject<Item> BLACK_BEAN = ITEMS.register("black_bean", () -> registerBlockItem(Blocks.BLACK_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
-    public static final RegistryObject<Item> RED_BEAN = ITEMS.register("red_bean", () -> registerBlockItem(Blocks.RED_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
-    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () -> registerBlockItem(Blocks.BLUEBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLUEBERRY));
+    public static final RegistryObject<Item> BEAN = ITEMS.register("bean", () -> registerNameBlockItem(Blocks.BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
+    public static final RegistryObject<Item> BLACK_BEAN = ITEMS.register("black_bean", () -> registerNameBlockItem(Blocks.BLACK_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
+    public static final RegistryObject<Item> RED_BEAN = ITEMS.register("red_bean", () -> registerNameBlockItem(Blocks.RED_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
+    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () -> registerNameBlockItem(Blocks.BLUEBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLUEBERRY));
     public static final RegistryObject<Item> BACKPACK = registerItem("backpack", () -> new BackpackItem(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS)));
     public static final RegistryObject<Item> RAW_CRAB_MEAT = registerItem("raw_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.RAW_CRAB);
     public static final RegistryObject<Item> COOKED_CRAB_MEAT = registerItem("cooked_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.COOKED_CRAB);
@@ -39,8 +39,12 @@ public class Items {
     public static final RegistryObject<SpawnEggItem> WARRIOR_DWARF_SPAWN_EGG = registerSpawnEgg("warrior_dwarf_spawn_egg", Entity.WARRIOR_DWARF, -9880025, -3026479);
     public static final RegistryObject<SpawnEggItem> WHALE_SPAWN_EGG = registerSpawnEgg("whale_spawn_egg", Entity.WHALE, -9271601, -13158280);
 
-    private static BlockItem registerBlockItem(Block block, CreativeModeTab creativeModeTab, FoodProperties food) {
-        return new BlockItem(block, (new Item.Properties().tab(creativeModeTab).food(food)));
+    private static ItemNameBlockItem registerNameBlockItem(Block block, CreativeModeTab creativeModeTab, FoodProperties food) {
+        return new ItemNameBlockItem(block, (new Item.Properties().tab(creativeModeTab).food(food)));
+    }
+
+    private static BlockItem registerBlockItem(Block block, CreativeModeTab creativeModeTab) {
+        return new BlockItem(block, (new Item.Properties().tab(creativeModeTab)));
     }
 
     private static RegistryObject<Item> registerItem(String name, CreativeModeTab creativeModeTab, FoodProperties foodProperties) {
