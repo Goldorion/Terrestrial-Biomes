@@ -1,8 +1,8 @@
 package net.golkeb.terrestrial_biomes.world.entity.animal;
 
-import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.golkeb.terrestrial_biomes.world.entity.ai.control.AbstractMoveControl;
+import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
@@ -49,7 +49,7 @@ public class Starfish extends AbstractShellfish {
     }
 
     public ItemStack getBucketItemStack() {
-        return new ItemStack(ItemInit.STARFISH_BUCKET.get());
+        return new ItemStack(Items.STARFISH_BUCKET.get());
     }
 
     public Packet<?> getAddEntityPacket() {
@@ -73,7 +73,7 @@ public class Starfish extends AbstractShellfish {
 
     protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
         super.dropCustomDeathLoot(source, looting, recentlyHit);
-        this.spawnAtLocation(new ItemStack(ItemInit.STARFISH.get(), 1));
+        this.spawnAtLocation(new ItemStack(Items.STARFISH.get(), 1));
     }
 
     @Override

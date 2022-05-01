@@ -1,11 +1,11 @@
 package net.golkeb.terrestrial_biomes.world.entity.animal;
 
-import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.golkeb.terrestrial_biomes.world.entity.ai.control.CrabMoveControl;
 import net.golkeb.terrestrial_biomes.world.entity.ai.goal.CrabSwimUpGoal;
 import net.golkeb.terrestrial_biomes.world.entity.ai.goal.CrabToBeachGoal;
 import net.golkeb.terrestrial_biomes.world.entity.ai.goal.CrabToWaterGoal;
+import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -53,7 +53,7 @@ public class Crab extends AbstractShellfish {
     }
 
     public ItemStack getBucketItemStack() {
-        return new ItemStack(ItemInit.CRAB_BUCKET.get());
+        return new ItemStack(Items.CRAB_BUCKET.get());
     }
 
     public Packet<?> getAddEntityPacket() {
@@ -102,7 +102,7 @@ public class Crab extends AbstractShellfish {
 
     protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
         super.dropCustomDeathLoot(source, looting, recentlyHit);
-        this.spawnAtLocation(new ItemStack(ItemInit.RAW_CRAB_MEAT.get(), 1));
+        this.spawnAtLocation(new ItemStack(Items.RAW_CRAB_MEAT.get(), 1));
     }
 
     @Override

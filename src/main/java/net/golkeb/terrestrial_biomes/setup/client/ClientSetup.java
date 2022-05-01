@@ -11,9 +11,9 @@ import net.golkeb.terrestrial_biomes.client.renderer.entity.*;
 import net.golkeb.terrestrial_biomes.init.BlockInit;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
-import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Crab;
+import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -41,7 +41,7 @@ public class ClientSetup {
             ItemBlockRenderTypes.setRenderLayer(BlockInit.RED_BEANS.get(), RenderType.cutout());
 
             // Item Properties
-            ItemProperties.register(ItemInit.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {
+            ItemProperties.register(Items.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {
                 if (entity == null) return 0.0F;
                 if (stack.getTag() != null) return stack.getTag().getInt(Crab.BUCKET_VARIANT_TAG);
                 return 0.0F;

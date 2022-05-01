@@ -1,6 +1,5 @@
 package net.golkeb.terrestrial_biomes.world.item;
 
-import net.golkeb.terrestrial_biomes.setup.ItemGroups;
 import net.golkeb.terrestrial_biomes.world.inventory.BackpackMenu;
 import net.golkeb.terrestrial_biomes.world.inventory.ItemInventory;
 import net.minecraft.core.Direction;
@@ -15,7 +14,6 @@ import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -31,8 +29,8 @@ import javax.annotation.Nullable;
 
 public class BackpackItem extends Item {
 
-    public BackpackItem() {
-        super(new Properties().tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).stacksTo(1).rarity(Rarity.COMMON));
+    public BackpackItem(Item.Properties properties) {
+        super(properties);
     }
 
     @Override

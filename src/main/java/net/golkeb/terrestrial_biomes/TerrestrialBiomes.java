@@ -1,8 +1,11 @@
 package net.golkeb.terrestrial_biomes;
 
+import net.golkeb.terrestrial_biomes.init.BlockInit;
+import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
-import net.golkeb.terrestrial_biomes.setup.RegistryHandler;
+import net.golkeb.terrestrial_biomes.init.SoundsInit;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Whale;
+import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -26,8 +29,12 @@ public class TerrestrialBiomes {
 
     public TerrestrialBiomes() {
 
-        // Init Advancements and Registries
-        RegistryHandler.init();
+        // Init Registries
+        BlockInit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ContainerInit.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        EntityInit.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Items.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        SoundsInit.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         // Registers an event with the mod specific event bus. This is needed to register new stuff.
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
