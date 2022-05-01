@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "terrestrial_biomes:blocks/blackberries_stage3"
+  }
+}

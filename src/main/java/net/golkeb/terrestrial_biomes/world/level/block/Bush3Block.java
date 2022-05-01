@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -21,13 +22,16 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class Bush3Block extends BushBlock implements BonemealableBlock {
 
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+    private final Supplier<Item> berry;
 
-    public Bush3Block(Properties properties) {
+    public Bush3Block(Properties properties, Supplier<Item> berryItem) {
         super(properties);
+        this.berry = berryItem;
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
@@ -50,7 +54,7 @@ public class Bush3Block extends BushBlock implements BonemealableBlock {
             return InteractionResult.PASS;
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
-            popResource(level, pos, new ItemStack(net.golkeb.terrestrial_biomes.world.item.Items.BLUEBERRY.get(), j + (flag ? 1 : 0)));
+            popResource(level, pos, new ItemStack(this.berry.get(), j + (flag ? 1 : 0)));
             level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             level.setBlock(pos, blockState.setValue(AGE, 1), 2);
             return InteractionResult.sidedSuccess(level.isClientSide);

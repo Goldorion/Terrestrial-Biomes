@@ -25,7 +25,8 @@ public class Items {
     public static final RegistryObject<Item> BEAN = ITEMS.register("bean", () -> registerNameBlockItem(Blocks.BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
     public static final RegistryObject<Item> BLACK_BEAN = ITEMS.register("black_bean", () -> registerNameBlockItem(Blocks.BLACK_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
     public static final RegistryObject<Item> RED_BEAN = ITEMS.register("red_bean", () -> registerNameBlockItem(Blocks.RED_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN));
-    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () -> registerNameBlockItem(Blocks.BLUEBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLUEBERRY));
+    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberry", () -> registerNameBlockItem(Blocks.BLUEBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLUEBERRY));
+    public static final RegistryObject<Item> BLACKBERRY = ITEMS.register("blackberry", () -> registerNameBlockItem(Blocks.BLACKBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLACKBERRY));
     public static final RegistryObject<Item> BACKPACK = registerItem("backpack", () -> new BackpackItem(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS)));
     public static final RegistryObject<Item> RAW_CRAB_MEAT = registerItem("raw_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.RAW_CRAB);
     public static final RegistryObject<Item> COOKED_CRAB_MEAT = registerItem("cooked_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.COOKED_CRAB);

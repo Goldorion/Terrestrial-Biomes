@@ -35,6 +35,7 @@ public class ClientSetup {
             MenuScreens.register(MenuType.BACKPACK.get(), BackpackScreen::new);
 
             // Cutout
+            ItemBlockRenderTypes.setRenderLayer(Blocks.BLACKBERRIES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(Blocks.BLUEBERRIES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(Blocks.BEANS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(Blocks.BLACK_BEANS.get(), RenderType.cutout());

@@ -6,13 +6,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BlueberriesBlock extends Bush3Block {
+public class BlackberriesBlock extends Bush3Block {
 
-    public BlueberriesBlock(Properties properties) {
-        super(properties, Items.BLUEBERRY);
+    public BlackberriesBlock(Properties properties) {
+        super(properties, Items.BLACKBERRY);
     }
 
     public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos pos, BlockState blockState) {
-        return new ItemStack(Items.BLUEBERRY.get());
+        return new ItemStack(Items.BLACKBERRY.get());
     }
 }
