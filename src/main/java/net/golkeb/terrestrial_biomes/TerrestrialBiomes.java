@@ -1,8 +1,8 @@
 package net.golkeb.terrestrial_biomes;
 
-import net.golkeb.terrestrial_biomes.entities.Whale;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.setup.RegistryHandler;
+import net.golkeb.terrestrial_biomes.world.entity.animal.Whale;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;

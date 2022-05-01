@@ -1,7 +1,7 @@
 package net.golkeb.terrestrial_biomes.init;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.entities.*;
+import net.golkeb.terrestrial_biomes.world.entity.animal.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;

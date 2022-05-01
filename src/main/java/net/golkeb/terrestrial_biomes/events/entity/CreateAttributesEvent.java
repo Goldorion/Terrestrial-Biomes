@@ -1,8 +1,8 @@
 package net.golkeb.terrestrial_biomes.events.entity;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.entities.*;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
+import net.golkeb.terrestrial_biomes.world.entity.animal.*;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

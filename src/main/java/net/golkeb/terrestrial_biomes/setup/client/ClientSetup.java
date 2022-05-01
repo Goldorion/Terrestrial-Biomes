@@ -1,19 +1,19 @@
 package net.golkeb.terrestrial_biomes.setup.client;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.client.guis.BackpackWindow;
-import net.golkeb.terrestrial_biomes.client.models.CrabModel;
-import net.golkeb.terrestrial_biomes.client.models.DwarfModel;
-import net.golkeb.terrestrial_biomes.client.models.StarfishModel;
-import net.golkeb.terrestrial_biomes.client.models.WhaleModel;
-import net.golkeb.terrestrial_biomes.client.renderers.*;
-import net.golkeb.terrestrial_biomes.entities.Crab;
+import net.golkeb.terrestrial_biomes.client.guis.BackpackScreen;
+import net.golkeb.terrestrial_biomes.client.model.CrabModel;
+import net.golkeb.terrestrial_biomes.client.model.DwarfModel;
+import net.golkeb.terrestrial_biomes.client.model.StarfishModel;
+import net.golkeb.terrestrial_biomes.client.model.WhaleModel;
+import net.golkeb.terrestrial_biomes.client.model.geom.ModelLayer;
+import net.golkeb.terrestrial_biomes.client.renderer.entity.*;
 import net.golkeb.terrestrial_biomes.init.BlockInit;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.init.ItemInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
-import net.golkeb.terrestrial_biomes.misc.ModelLayer;
+import net.golkeb.terrestrial_biomes.world.entity.animal.Crab;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -32,7 +32,7 @@ public class ClientSetup {
         // Make this deferred for unsafe threads
         event.enqueueWork(() -> {
             // Connect Containers and Windows
-            MenuScreens.register(ContainerInit.BACKPACK_CONTAINER.get(), BackpackWindow::new);
+            MenuScreens.register(ContainerInit.BACKPACK_CONTAINER.get(), BackpackScreen::new);
 
             // Cutout
             ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRIES.get(), RenderType.cutout());

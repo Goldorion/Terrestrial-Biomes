@@ -1,10 +1,10 @@
 package net.golkeb.terrestrial_biomes.init;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.items.AbstractEgg;
-import net.golkeb.terrestrial_biomes.items.Backpack;
-import net.golkeb.terrestrial_biomes.misc.Food;
 import net.golkeb.terrestrial_biomes.setup.ItemGroups;
+import net.golkeb.terrestrial_biomes.world.food.Food;
+import net.golkeb.terrestrial_biomes.world.item.AbstractEggItem;
+import net.golkeb.terrestrial_biomes.world.item.BackpackItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
@@ -30,7 +30,7 @@ public class ItemInit {
     public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberries", () ->
             new ItemNameBlockItem(BlockInit.BLUEBERRIES.get(), (new Item.Properties()).stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.BLUEBERRY)));
 
-    public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", Backpack::new);
+    public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack", BackpackItem::new);
 
     public static final RegistryObject<Item> RAW_CRAB_MEAT = ITEMS.register("raw_crab_meat", () ->
             new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS).food(Food.RAW_CRAB)));
@@ -51,17 +51,17 @@ public class ItemInit {
             new ForgeSpawnEggItem(EntityInit.CRAB, -511739, -12412, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<SpawnEggItem> EXPLORER_DWARF_SPAWN_EGG = ITEMS.register("explorer_dwarf_spawn_egg", () ->
-            new AbstractEgg(EntityInit.EXPLORER_DWARF, -9880025, -14342875));
+            new AbstractEggItem(EntityInit.EXPLORER_DWARF, -9880025, -14342875));
 
     public static final RegistryObject<SpawnEggItem> FARMER_DWARF_SPAWN_EGG = ITEMS.register("farmer_dwarf_spawn_egg", () ->
-            new AbstractEgg(EntityInit.FARMER_DWARF, -9880025, -2245076));
+            new AbstractEggItem(EntityInit.FARMER_DWARF, -9880025, -2245076));
 
     public static final RegistryObject<SpawnEggItem> STARFISH_SPAWN_EGG = ITEMS.register("starfish_spawn_egg", () ->
-            new AbstractEgg(EntityInit.STARFISH, -511739, -12412));
+            new AbstractEggItem(EntityInit.STARFISH, -511739, -12412));
 
     public static final RegistryObject<SpawnEggItem> WARRIOR_DWARF_SPAWN_EGG = ITEMS.register("warrior_dwarf_spawn_egg", () ->
-            new AbstractEgg(EntityInit.WARRIOR_DWARF, -9880025, -3026479));
+            new AbstractEggItem(EntityInit.WARRIOR_DWARF, -9880025, -3026479));
 
     public static final RegistryObject<SpawnEggItem> WHALE_SPAWN_EGG = ITEMS.register("whale_spawn_egg", () ->
-            new AbstractEgg(EntityInit.WHALE, -9271601, -13158280));
+            new AbstractEggItem(EntityInit.WHALE, -9271601, -13158280));
 }
