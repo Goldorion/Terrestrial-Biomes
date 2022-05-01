@@ -1,10 +1,10 @@
 package net.golkeb.terrestrial_biomes.world.item;
 
 import net.golkeb.terrestrial_biomes.TerrestrialBiomes;
-import net.golkeb.terrestrial_biomes.init.BlockInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.setup.ItemGroups;
 import net.golkeb.terrestrial_biomes.world.food.Food;
+import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -21,10 +21,10 @@ import java.util.function.Supplier;
 public class Items {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TerrestrialBiomes.MODID);
-    public static final RegistryObject<Item> BEAN = registerBlock(BlockInit.BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
-    public static final RegistryObject<Item> BLACK_BEAN = registerBlock(BlockInit.BLACK_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
-    public static final RegistryObject<Item> RED_BEAN = registerBlock(BlockInit.RED_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
-    public static final RegistryObject<Item> BLUEBERRY = registerBlock(BlockInit.BLUEBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLUEBERRY);
+    public static final RegistryObject<Item> BEAN = registerBlock(Blocks.BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
+    public static final RegistryObject<Item> BLACK_BEAN = registerBlock(Blocks.BLACK_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
+    public static final RegistryObject<Item> RED_BEAN = registerBlock(Blocks.RED_BEANS.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BEAN);
+    public static final RegistryObject<Item> BLUEBERRY = registerBlock(Blocks.BLUEBERRIES.get(), ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.BLUEBERRY);
     public static final RegistryObject<Item> BACKPACK = registerItem("backpack", new BackpackItem(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON).tab(ItemGroups.TERRESTRIAL_BIOMES_ITEMS)));
     public static final RegistryObject<Item> RAW_CRAB_MEAT = registerItem("raw_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.RAW_CRAB);
     public static final RegistryObject<Item> COOKED_CRAB_MEAT = registerItem("cooked_crab_meat", ItemGroups.TERRESTRIAL_BIOMES_ITEMS, Food.COOKED_CRAB);

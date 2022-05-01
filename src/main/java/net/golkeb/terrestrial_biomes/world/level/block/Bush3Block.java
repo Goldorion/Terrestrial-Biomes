@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.world.level.blocks;
+package net.golkeb.terrestrial_biomes.world.level.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -23,6 +23,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import java.util.Random;
 
 public class Bush3Block extends BushBlock implements BonemealableBlock {
+
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 
     public Bush3Block(Properties properties) {

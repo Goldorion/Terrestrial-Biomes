@@ -8,12 +8,12 @@ import net.golkeb.terrestrial_biomes.client.model.StarfishModel;
 import net.golkeb.terrestrial_biomes.client.model.WhaleModel;
 import net.golkeb.terrestrial_biomes.client.model.geom.ModelLayer;
 import net.golkeb.terrestrial_biomes.client.renderer.entity.*;
-import net.golkeb.terrestrial_biomes.init.BlockInit;
 import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.init.EntityInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Crab;
 import net.golkeb.terrestrial_biomes.world.item.Items;
+import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -35,10 +35,10 @@ public class ClientSetup {
             MenuScreens.register(ContainerInit.BACKPACK_CONTAINER.get(), BackpackScreen::new);
 
             // Cutout
-            ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRIES.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(BlockInit.BEANS.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACK_BEANS.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(BlockInit.RED_BEANS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blocks.BLUEBERRIES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blocks.BEANS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blocks.BLACK_BEANS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blocks.RED_BEANS.get(), RenderType.cutout());
 
             // Item Properties
             ItemProperties.register(Items.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {

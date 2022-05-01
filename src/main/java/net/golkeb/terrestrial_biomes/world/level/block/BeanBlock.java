@@ -1,4 +1,4 @@
-package net.golkeb.terrestrial_biomes.world.level.blocks;
+package net.golkeb.terrestrial_biomes.world.level.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
