@@ -1,6 +1,5 @@
 package net.golkeb.terrestrial_biomes.world.inventory;
 
-import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.world.item.BackpackItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,7 +18,7 @@ public class BackpackMenu extends AbstractContainerMenu {
     private final Container container;
 
     public BackpackMenu(int id, Inventory inv, ItemStack stack) {
-        this(ContainerInit.BACKPACK_CONTAINER.get(), id, inv, BackpackItem.getInventory(stack));
+        this(net.golkeb.terrestrial_biomes.world.inventory.MenuType.BACKPACK.get(), id, inv, BackpackItem.getInventory(stack));
     }
 
     public BackpackMenu(MenuType<? extends BackpackMenu> containerType, int id, Inventory inv, Container container) {

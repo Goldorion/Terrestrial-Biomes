@@ -1,9 +1,9 @@
 package net.golkeb.terrestrial_biomes;
 
-import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.sounds.Sounds;
 import net.golkeb.terrestrial_biomes.world.entity.Entity;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Whale;
+import net.golkeb.terrestrial_biomes.world.inventory.MenuType;
 import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +31,7 @@ public class TerrestrialBiomes {
 
         // Init Registries
         Blocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        ContainerInit.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        MenuType.MENUS.register(FMLJavaModLoadingContext.get().getModEventBus());
         Entity.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         Items.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         Sounds.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());

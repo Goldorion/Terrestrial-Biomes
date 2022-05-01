@@ -8,10 +8,10 @@ import net.golkeb.terrestrial_biomes.client.model.StarfishModel;
 import net.golkeb.terrestrial_biomes.client.model.WhaleModel;
 import net.golkeb.terrestrial_biomes.client.model.geom.ModelLayer;
 import net.golkeb.terrestrial_biomes.client.renderer.entity.*;
-import net.golkeb.terrestrial_biomes.init.ContainerInit;
 import net.golkeb.terrestrial_biomes.misc.Keys;
 import net.golkeb.terrestrial_biomes.world.entity.Entity;
 import net.golkeb.terrestrial_biomes.world.entity.animal.Crab;
+import net.golkeb.terrestrial_biomes.world.inventory.MenuType;
 import net.golkeb.terrestrial_biomes.world.item.Items;
 import net.golkeb.terrestrial_biomes.world.level.block.Blocks;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -32,7 +32,7 @@ public class ClientSetup {
         // Make this deferred for unsafe threads
         event.enqueueWork(() -> {
             // Connect Containers and Windows
-            MenuScreens.register(ContainerInit.BACKPACK_CONTAINER.get(), BackpackScreen::new);
+            MenuScreens.register(MenuType.BACKPACK.get(), BackpackScreen::new);
 
             // Cutout
             ItemBlockRenderTypes.setRenderLayer(Blocks.BLUEBERRIES.get(), RenderType.cutout());
