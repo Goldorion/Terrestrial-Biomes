@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "terrestrial_biomes:blocks/tomato_stage1"
+  }
+}

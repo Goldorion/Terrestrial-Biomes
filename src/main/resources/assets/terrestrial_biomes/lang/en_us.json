@@ -12,6 +12,7 @@
   "item.terrestrial_biomes.blackberry": "Blackberry",
   "item.terrestrial_biomes.blueberry": "Blueberry",
   "item.terrestrial_biomes.cooked_crab_meat": "Cooked Crab Meat",
+  "item.terrestrial_biomes.corn": "Corn",
   "item.terrestrial_biomes.crab_bucket": "Bucket of Crab",
   "item.terrestrial_biomes.crab_spawn_egg": "Crab Spawn Egg",
   "item.terrestrial_biomes.explorer_dwarf_spawn_egg": "Explorer Dwarf Spawn Egg",
@@ -21,6 +22,7 @@
   "item.terrestrial_biomes.starfish": "Starfish",
   "item.terrestrial_biomes.starfish_bucket": "Bucket of Starfish",
   "item.terrestrial_biomes.starfish_spawn_egg": "Starfish Spawn Egg",
+  "item.terrestrial_biomes.tomato": "Tomato",
   "item.terrestrial_biomes.warrior_dwarf_spawn_egg": "Warrior Dwarf Spawn Egg",
   "item.terrestrial_biomes.whale_spawn_egg": "Whale Spawn Egg",
   "itemGroup.terrestrial_biomes_items": "Terrestrial Biomes : Items"

@@ -40,6 +40,8 @@ public class ClientSetup {
             ItemBlockRenderTypes.setRenderLayer(Blocks.BEANS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(Blocks.BLACK_BEANS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(Blocks.RED_BEANS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blocks.CORNS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blocks.TOMATOES.get(), RenderType.cutout());
 
             // Item Properties
             ItemProperties.register(Items.CRAB_BUCKET.get(), Keys.VARIANT_PROPERTY, (stack, level, entity, i) -> {

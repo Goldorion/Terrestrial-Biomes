@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "terrestrial_biomes:blocks/corn_stage1"
+  }
+}

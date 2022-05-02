@@ -11,20 +11,20 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.function.Supplier;
 
-public class BeanBlock extends SuppCropBlock {
+public class TomatoBlock extends SuppCropBlock {
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
-            Block.box(5.0D, 0.0D, 5.0D, 10.0D, 7.0D, 10.0D),
-            Block.box(4.0D, 0.0D, 4.0D, 11.0D, 8.0D, 11.0D),
-            Block.box(4.0D, 0.0D, 4.0D, 12.0D, 9.0D, 12.0D),
-            Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D),
-            Block.box(3.0D, 0.0D, 3.0D, 13.0D, 11.0D, 13.0D),
-            Block.box(3.0D, 0.0D, 3.0D, 13.0D, 13.0D, 13.0D),
-            Block.box(3.0D, 0.0D, 3.0D, 13.0D, 14.0D, 13.0D),
-            Block.box(3.0D, 0.0D, 3.0D, 13.0D, 15.0D, 13.0D)};
+            Block.box(2.0D, 0.0D, 2.0D, 13.0D, 3.0D, 13.0D),
+            Block.box(1.0D, 0.0D, 1.0D, 15.0D, 5.0D, 15.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 15.0D, 7.0D, 15.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 15.0D, 9.0D, 15.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 15.0D, 12.0D, 15.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 15.0D, 16.0D)};
 
-    public BeanBlock(Supplier<ItemLike> bean, BlockBehaviour.Properties properties) {
-        super(bean, properties);
+    public TomatoBlock(Supplier<ItemLike> tomato, BlockBehaviour.Properties properties) {
+        super(tomato, properties);
     }
 
     @Override
